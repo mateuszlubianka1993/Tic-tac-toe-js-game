@@ -1,10 +1,10 @@
 document.addEventListener( 'DOMContentLoaded', function(){
 
-    const boxes = document.querySelectorAll('#big-box div');
+    const $boxes = document.querySelectorAll('#big-box div');
     let ticTac = 0;
     
-    for(let i = 0; i < boxes.length; i++) {
-        boxes[i].onclick = function() {
+    for(let i = 0; i < $boxes.length; i++) {
+        $boxes[i].onclick = function() {
             if(this.innerHTML !== 'X' && this.innerHTML !== 'O') {
                 if(ticTac % 2 === 0) {
                     console.log(ticTac);
@@ -24,30 +24,30 @@ document.addEventListener( 'DOMContentLoaded', function(){
     }
     
     // Play Again function
-    let button = document.getElementById('play-again');
-    button.addEventListener('click', function() {
-        for(let i = 0; i < boxes.length; i++) {
-            boxes[i].innerHTML = '';
-            boxes[i].classList.remove('win-box');
+    const $button = document.getElementById('play-again');
+    $button.addEventListener('click', function() {
+        for(let i = 0; i < $boxes.length; i++) {
+            $boxes[i].innerHTML = '';
+            $boxes[i].classList.remove('win-box');
         }
         player.innerHTML = 'PLAY';
     });
 
 } );
 
-let player = document.getElementById('player');
+const $player = document.getElementById('player');
 
 const findWinner = () => {
     
-    let box1 = document.getElementById('box1');
-    let box2 = document.getElementById('box2');
-    let box3 = document.getElementById('box3');
-    let box4 = document.getElementById('box4');
-    let box5 = document.getElementById('box5');
-    let box6 = document.getElementById('box6');
-    let box7 = document.getElementById('box7');
-    let box8 = document.getElementById('box8');
-    let box9 = document.getElementById('box9');
+    const box1 = document.getElementById('box1');
+    const box2 = document.getElementById('box2');
+    const box3 = document.getElementById('box3');
+    const box4 = document.getElementById('box4');
+    const box5 = document.getElementById('box5');
+    const box6 = document.getElementById('box6');
+    const box7 = document.getElementById('box7');
+    const box8 = document.getElementById('box8');
+    const box9 = document.getElementById('box9');
     
     
     if(box1.innerHTML !== '' && box1.innerHTML === box2.innerHTML && box1.innerHTML === box3.innerHTML) {
@@ -73,8 +73,6 @@ const findWinner = () => {
 const changeColor = (box1, box2, box3) => {
     box1.classList.add('win-box');
     box2.classList.add('win-box');
-    box3.classList.add('win-box');
-    
+    box3.classList.add('win-box'); 
     player.innerHTML = box1.innerHTML + ' player won!';
 };
-

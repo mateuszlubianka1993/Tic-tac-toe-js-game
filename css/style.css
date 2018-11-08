@@ -32,14 +32,12 @@ color: white;
 .clear {
     clear: both;
 }
-
 .win-box {
     background-color: red;
 }
 .win-box:hover {
     background-color: red;
 }
-
 .play-again {
     width: 300px; 
     margin-top: 15px;
