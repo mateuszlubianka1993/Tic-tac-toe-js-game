@@ -6,7 +6,7 @@ h1 {
 text-align: center;
 color: white;
 }
-#game-section {
+.game-section {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
@@ -40,12 +40,12 @@ color: white;
     background-color: red;
 }
 
-#play-again {
+.play-again {
     width: 300px; 
     margin-top: 15px;
     font-size: 30px;
 }
-#player {
+.player {
     text-align: center;
     font-size: 35px;
     background-color: yellow;
@@ -58,6 +58,6 @@ color: white;
     margin-bottom: 10px;
     display: block;
 }
-#footer {
+.footer-section {
     text-align: center;
 }
