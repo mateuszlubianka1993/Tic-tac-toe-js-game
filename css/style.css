@@ -2,15 +2,18 @@ body {
     background-image: url(../img/pexels-photo-1020317.jpeg);
     font-family: 'Permanent Marker', cursive;
 }
+
 h1 {
-text-align: center;
-color: white;
+    text-align: center;
+    color: white;
 }
+
 .game-section {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
 }
+
 .small-box {
     width: 33.3%;
     text-align: center;
@@ -26,23 +29,29 @@ color: white;
     transition: all 0.4s ease-in-out;
     color: #fff;
 }
+
 .small-box:hover {
     background-color: #ddaa11;
 }
+
 .clear {
     clear: both;
 }
+
 .win-box {
     background-color: red;
 }
+
 .win-box:hover {
     background-color: red;
 }
+
 .play-again {
-    width: 300px; 
+    width: 300px;
     margin-top: 15px;
     font-size: 30px;
 }
+
 .player {
     text-align: center;
     font-size: 35px;
@@ -56,6 +65,7 @@ color: white;
     margin-bottom: 10px;
     display: block;
 }
+
 .footer-section {
     text-align: center;
 }
