@@ -57,13 +57,13 @@ const findWinner = () => {
         changeColor($box4, $box5, $box6);
     }
     if ($box7.innerHTML !== '' && $box7.innerHTML === $box8.innerHTML && $box7.innerHTML === $box9.innerHTML) {
-        changeColor($box7, $box7, $box9);
+        changeColor($box7, $box8, $box9);
     }
     if ($box1.innerHTML !== '' && $box1.innerHTML === $box4.innerHTML && $box1.innerHTML === $box7.innerHTML) {
         changeColor($box1, $box4, $box7);
     }
     if ($box2.innerHTML !== '' && box2.innerHTML === $box5.innerHTML && $box2.innerHTML === $box8.innerHTML) {
-        changeColor($box2, $box5, $box$8);
+        changeColor($box2, $box5, $box8);
     }
     if ($box3.innerHTML !== '' && $box3.innerHTML === $box6.innerHTML && $box3.innerHTML === $box9.innerHTML) {
         changeColor($box3, $box6, $box9);
