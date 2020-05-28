@@ -1,0 +1,27 @@
+{
+  "name": "tic-tac-toe-js-game",
+  "version": "1.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mateuszlubianka1993/Tic-tac-toe-js-game.git"
+  },
+  "keywords": [
+    "Game",
+    "TicTacToe"
+  ],
+  "author": "Mateusz Łubianka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mateuszlubianka1993/Tic-tac-toe-js-game/issues"
+  },
+  "homepage": "https://github.com/mateuszlubianka1993/Tic-tac-toe-js-game#readme",
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
