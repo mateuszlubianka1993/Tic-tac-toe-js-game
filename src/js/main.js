@@ -1,19 +1,19 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
 
     const $boxes = document.querySelectorAll('#big-box div');
     let ticTac = 0;
 
     for (let i = 0; i < $boxes.length; i++) {
-        $boxes[i].onclick = function () {
+        $boxes[i].onclick = function() {
             if (this.innerHTML !== 'X' && this.innerHTML !== 'O') {
                 if (ticTac % 2 === 0) {
-                    console.log(ticTac);
+
                     this.innerHTML = 'X';
                     $player.innerHTML = 'O Player Turn';
                     findWinner();
                     ticTac += 1;
                 } else {
-                    console.log(ticTac);
+
                     this.innerHTML = 'O';
                     $player.innerHTML = 'X Player Turn';
                     findWinner();
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Play Again function
     const $button = document.getElementById('play-again');
-    $button.addEventListener('click', function () {
+    $button.addEventListener('click', function() {
         for (let i = 0; i < $boxes.length; i++) {
             $boxes[i].innerHTML = '';
             $boxes[i].classList.remove('win-box');

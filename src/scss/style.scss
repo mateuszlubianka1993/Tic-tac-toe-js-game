@@ -1,0 +1,120 @@
+@import "~bootstrap/scss/bootstrap";
+body {
+    background-image: url(../img/pexels-photo-1020317.jpeg);
+    font-family: 'Permanent Marker', cursive;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+.game-section {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.small-box {
+    width: 33.3%;
+    text-align: center;
+    float: left;
+    border: 2px solid #000;
+    border-radius: 10px;
+    height: 150px;
+    line-height: 150px;
+    font-weight: bold;
+    font-size: 70px;
+    cursor: pointer;
+    background-color: #ffcc33;
+    transition: all 0.4s ease-in-out;
+    color: #fff;
+}
+
+.small-box:hover {
+    background-color: #ddaa11;
+}
+
+.clear {
+    clear: both;
+}
+
+.win-box {
+    background-color: red;
+}
+
+.win-box:hover {
+    background-color: red;
+}
+
+.play-again {
+    width: 60%;
+    margin-top: 15px;
+    font-size: 30px;
+}
+
+.player {
+    text-align: center;
+    font-size: 35px;
+    background-color: yellow;
+    border: 3px solid #000;
+    border-radius: 10px;
+    padding: 5px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+
+/* rwd */
+
+@media (max-width: 991px) {
+    .game-section {
+        width: 70%;
+    }
+}
+
+@media (max-width: 767px) {
+    .game-section {
+        width: 80%;
+    }
+    .player {
+        width: 70%;
+    }
+}
+
+@media (max-width: 599px) {
+    .game-section {
+        width: 85%;
+    }
+    .small-box {
+        height: 125px;
+        line-height: 125px;
+        font-size: 62px;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-section {
+        width: 90%;
+    }
+    .small-box {
+        height: 110px;
+        line-height: 110px;
+        font-size: 56px;
+    }
+    .player {
+        font-size: 26px;
+        width: 90%;
+    }
+    .play-again {
+        font-size: 26px;
+        width: 75%;
+    }
+}
