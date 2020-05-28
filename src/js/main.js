@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     for (let i = 0; i < $boxes.length; i++) {
         $boxes[i].onclick = function() {
-            if (this.innerHTML !== 'X' && this.innerHTML !== 'O') {
+            if (this.innerHTML !== 'X' && this.innerHTML !== 'O' && !isWinner) {
                 if (ticTac % 2 === 0) {
 
                     this.innerHTML = 'X';
@@ -31,11 +31,13 @@ document.addEventListener('DOMContentLoaded', function() {
             $boxes[i].classList.remove('win-box');
         }
         $player.innerHTML = 'PLAY';
+        isWinner = false;
     });
 
 });
 
 const $player = document.getElementById('player');
+let isWinner = false;
 
 const findWinner = () => {
 
@@ -82,4 +84,5 @@ const changeColor = (box1, box2, box3) => {
     box2.classList.add('win-box');
     box3.classList.add('win-box');
     $player.innerHTML = box1.innerHTML + ' player won!';
+    isWinner = true;
 };
