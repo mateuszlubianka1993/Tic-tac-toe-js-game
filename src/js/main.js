@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     this.innerHTML = 'X';
                     $player.innerHTML = 'O Player Turn';
-                    findWinner(isWinner);
+                    isWinner = findWinner(isWinner);
                     ticTac += 1;
                 } else {
 
                     this.innerHTML = 'O';
                     $player.innerHTML = 'X Player Turn';
-                    findWinner(isWinner);
+                    isWinner = findWinner(isWinner);
                     ticTac += 1;
                 }
             }
@@ -31,6 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Play Again function
     const $button = document.getElementById('play-again');
     $button.addEventListener('click', function() {
-        playAgain($boxes, $player, isWinner);
+        isWinner = playAgain($boxes, $player, isWinner);
     });
 });

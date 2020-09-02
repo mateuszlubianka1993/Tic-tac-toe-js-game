@@ -1,9 +1,13 @@
-describe("A suite is just a function", function() {
-    var a;
+const playAgain = require('../src/js/util').playAgain;
 
-    it("and so is a spec", function() {
-        a = true;
+describe("A playAgain function", function() {
+    let isWinner;
+    const $boxes = [];
+    const $player = {};
 
-        expect(a).toBe(true);
+    it("should change isWinner value to 'false'.", function() {
+        isWinner = true;
+        isWinner = playAgain($boxes, $player, isWinner);
+        expect(isWinner).toBe(false);
     });
 });
