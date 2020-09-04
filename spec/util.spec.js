@@ -1,6 +1,7 @@
 let { JSDOM } = require('jsdom');
 
 const playAgain = require('../src/js/util').playAgain;
+const changeColor = require('../src/js/util').changeColor;
 
 describe("A playAgain function", function() {
     let isWinner;
@@ -52,5 +53,58 @@ describe("A playAgain function", function() {
             }
         }
         expect(result.length).toBe($boxes.length);
+    });
+});
+
+describe("A changeColor function", function() {
+    let isWinner;
+    let browser;
+
+    beforeEach(done => {
+        JSDOM.fromFile('./dist/index.html', {
+
+        }).then(res => {
+            browser = res;
+
+            done();
+        })
+    })
+
+    afterEach(() => {
+        browser.window.close();
+    })
+
+    it("should change isWinner value to 'true'.", function() {
+        isWinner = false;
+        const $box1 = browser.window.document.getElementById('box1');
+        const $box2 = browser.window.document.getElementById('box2');
+        const $box3 = browser.window.document.getElementById('box3');
+        const $player = browser.window.document.getElementById('player');
+
+        isWinner = changeColor($box1, $box2, $box3, isWinner, $player);
+        expect(isWinner).toBe(true);
+    });
+
+    it("should change #player text to box1.innerHTML + ' player won!'.", function() {
+        isWinner = false;
+        const $box1 = browser.window.document.getElementById('box1');
+        const $box2 = browser.window.document.getElementById('box2');
+        const $box3 = browser.window.document.getElementById('box3');
+        const $player = browser.window.document.getElementById('player');
+
+        changeColor($box1, $box2, $box3, isWinner, $player);
+        expect($player.innerHTML).toBe($box1.innerHTML + ' player won!');
+    });
+
+    it("should add 'win-box' class to $box1, $box2, $box3.", function() {
+        isWinner = false;
+        const $box1 = browser.window.document.getElementById('box1');
+        const $box2 = browser.window.document.getElementById('box2');
+        const $box3 = browser.window.document.getElementById('box3');
+        const $player = browser.window.document.getElementById('player');
+
+        changeColor($box1, $box2, $box3, isWinner, $player);
+        const result = ($box1.classList.contains('win-box') && $box2.classList.contains('win-box') && $box3.classList.contains('win-box')) ? true : false;
+        expect(result).toBe(true);
     });
 });

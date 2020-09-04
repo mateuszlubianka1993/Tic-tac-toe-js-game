@@ -8,8 +8,7 @@ const playAgain = ($boxes, $player, isWinner) => {
     return isWinner = false;
 }
 
-const changeColor = (box1, box2, box3, isWinner) => {
-    const $player = document.getElementById('player');
+const changeColor = (box1, box2, box3, isWinner, $player) => {
 
     box1.classList.add('win-box');
     box2.classList.add('win-box');
@@ -29,30 +28,31 @@ const findWinner = (isWinner) => {
     const $box7 = document.getElementById('box7');
     const $box8 = document.getElementById('box8');
     const $box9 = document.getElementById('box9');
+    const $player = document.getElementById('player');
 
     if ($box1.innerHTML !== '' && $box1.innerHTML === $box2.innerHTML && $box1.innerHTML === $box3.innerHTML) {
-        return changeColor($box1, $box2, $box3, isWinner);
+        return changeColor($box1, $box2, $box3, isWinner, $player);
     }
     if ($box4.innerHTML !== '' && $box4.innerHTML === $box5.innerHTML && $box4.innerHTML === $box6.innerHTML) {
-        return changeColor($box4, $box5, $box6, isWinner);
+        return changeColor($box4, $box5, $box6, isWinner, $player);
     }
     if ($box7.innerHTML !== '' && $box7.innerHTML === $box8.innerHTML && $box7.innerHTML === $box9.innerHTML) {
-        return changeColor($box7, $box8, $box9, isWinner);
+        return changeColor($box7, $box8, $box9, isWinner, $player);
     }
     if ($box1.innerHTML !== '' && $box1.innerHTML === $box4.innerHTML && $box1.innerHTML === $box7.innerHTML) {
-        return changeColor($box1, $box4, $box7, isWinner);
+        return changeColor($box1, $box4, $box7, isWinner, $player);
     }
     if ($box2.innerHTML !== '' && box2.innerHTML === $box5.innerHTML && $box2.innerHTML === $box8.innerHTML) {
-        return changeColor($box2, $box5, $box8, isWinner);
+        return changeColor($box2, $box5, $box8, isWinner, $player);
     }
     if ($box3.innerHTML !== '' && $box3.innerHTML === $box6.innerHTML && $box3.innerHTML === $box9.innerHTML) {
-        return changeColor($box3, $box6, $box9, isWinner);
+        return changeColor($box3, $box6, $box9, isWinner, $player);
     }
     if ($box1.innerHTML !== '' && $box1.innerHTML === $box5.innerHTML && $box1.innerHTML === $box9.innerHTML) {
-        return changeColor($box1, $box5, $box9, isWinner);
+        return changeColor($box1, $box5, $box9, isWinner, $player);
     }
     if ($box3.innerHTML !== '' && $box3.innerHTML === $box5.innerHTML && $box3.innerHTML === $box7.innerHTML) {
-        return changeColor($box3, $box5, $box7, isWinner);
+        return changeColor($box3, $box5, $box7, isWinner, $player);
     }
 };
 
