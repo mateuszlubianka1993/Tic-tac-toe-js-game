@@ -17,42 +17,31 @@ const changeColor = (box1, box2, box3, isWinner, $player) => {
     return isWinner = true;
 };
 
-const findWinner = (isWinner) => {
+const findWinner = (isWinner, $player, $boxes) => {
 
-    const $box1 = document.getElementById('box1');
-    const $box2 = document.getElementById('box2');
-    const $box3 = document.getElementById('box3');
-    const $box4 = document.getElementById('box4');
-    const $box5 = document.getElementById('box5');
-    const $box6 = document.getElementById('box6');
-    const $box7 = document.getElementById('box7');
-    const $box8 = document.getElementById('box8');
-    const $box9 = document.getElementById('box9');
-    const $player = document.getElementById('player');
-
-    if ($box1.innerHTML !== '' && $box1.innerHTML === $box2.innerHTML && $box1.innerHTML === $box3.innerHTML) {
-        return changeColor($box1, $box2, $box3, isWinner, $player);
+    if ($boxes[0].innerHTML !== '' && $boxes[0].innerHTML === $boxes[1].innerHTML && $boxes[0].innerHTML === $boxes[2].innerHTML) {
+        return changeColor($boxes[0], $boxes[1], $boxes[2], isWinner, $player);
     }
-    if ($box4.innerHTML !== '' && $box4.innerHTML === $box5.innerHTML && $box4.innerHTML === $box6.innerHTML) {
-        return changeColor($box4, $box5, $box6, isWinner, $player);
+    if ($boxes[3].innerHTML !== '' && $boxes[3].innerHTML === $boxes[4].innerHTML && $boxes[4].innerHTML === $boxes[5].innerHTML) {
+        return changeColor($boxes[3], $boxes[4], $boxes[5], isWinner, $player);
     }
-    if ($box7.innerHTML !== '' && $box7.innerHTML === $box8.innerHTML && $box7.innerHTML === $box9.innerHTML) {
-        return changeColor($box7, $box8, $box9, isWinner, $player);
+    if ($boxes[6].innerHTML !== '' && $boxes[6].innerHTML === $boxes[7].innerHTML && $boxes[6].innerHTML === $boxes[8].innerHTML) {
+        return changeColor($boxes[6], $boxes[7], $boxes[8], isWinner, $player);
     }
-    if ($box1.innerHTML !== '' && $box1.innerHTML === $box4.innerHTML && $box1.innerHTML === $box7.innerHTML) {
-        return changeColor($box1, $box4, $box7, isWinner, $player);
+    if ($boxes[0].innerHTML !== '' && $boxes[0].innerHTML === $boxes[3].innerHTML && $boxes[0].innerHTML === $boxes[6].innerHTML) {
+        return changeColor($boxes[0], $boxes[3], $boxes[6], isWinner, $player);
     }
-    if ($box2.innerHTML !== '' && box2.innerHTML === $box5.innerHTML && $box2.innerHTML === $box8.innerHTML) {
-        return changeColor($box2, $box5, $box8, isWinner, $player);
+    if ($boxes[1].innerHTML !== '' && $boxes[1].innerHTML === $boxes[4].innerHTML && $boxes[1].innerHTML === $boxes[7].innerHTML) {
+        return changeColor($boxes[1], $boxes[4], $boxes[7], isWinner, $player);
     }
-    if ($box3.innerHTML !== '' && $box3.innerHTML === $box6.innerHTML && $box3.innerHTML === $box9.innerHTML) {
-        return changeColor($box3, $box6, $box9, isWinner, $player);
+    if ($boxes[2].innerHTML !== '' && $boxes[2].innerHTML === $boxes[5].innerHTML && $boxes[2].innerHTML === $boxes[8].innerHTML) {
+        return changeColor($boxes[2], $boxes[5], $boxes[8], isWinner, $player);
     }
-    if ($box1.innerHTML !== '' && $box1.innerHTML === $box5.innerHTML && $box1.innerHTML === $box9.innerHTML) {
-        return changeColor($box1, $box5, $box9, isWinner, $player);
+    if ($boxes[0].innerHTML !== '' && $boxes[0].innerHTML === $boxes[4].innerHTML && $boxes[0].innerHTML === $boxes[8].innerHTML) {
+        return changeColor($boxes[0], $boxes[4], $boxes[8], isWinner, $player);
     }
-    if ($box3.innerHTML !== '' && $box3.innerHTML === $box5.innerHTML && $box3.innerHTML === $box7.innerHTML) {
-        return changeColor($box3, $box5, $box7, isWinner, $player);
+    if ($boxes[2].innerHTML !== '' && $boxes[2].innerHTML === $boxes[4].innerHTML && $boxes[2].innerHTML === $boxes[6].innerHTML) {
+        return changeColor($boxes[2], $boxes[4], $boxes[6], isWinner, $player);
     }
 };
 

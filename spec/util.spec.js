@@ -2,6 +2,7 @@ let { JSDOM } = require('jsdom');
 
 const playAgain = require('../src/js/util').playAgain;
 const changeColor = require('../src/js/util').changeColor;
+const findWinner = require('../src/js/util').findWinner;
 
 describe("A playAgain function", function() {
     let isWinner;
@@ -106,5 +107,50 @@ describe("A changeColor function", function() {
         changeColor($box1, $box2, $box3, isWinner, $player);
         const result = ($box1.classList.contains('win-box') && $box2.classList.contains('win-box') && $box3.classList.contains('win-box')) ? true : false;
         expect(result).toBe(true);
+    });
+});
+
+describe("A findWinner function", function() {
+    let isWinner;
+    let browser;
+
+    beforeEach(done => {
+        JSDOM.fromFile('./dist/index.html', {
+
+        }).then(res => {
+            browser = res;
+
+            done();
+        })
+    })
+
+    afterEach(() => {
+        browser.window.close();
+    })
+
+    it("should return the value 'true' from the function changeColor when the 3 squares forming the line and have the same value.", function() {
+        isWinner = false;
+        const $player = browser.window.document.getElementById('player');
+        const $boxes = browser.window.document.querySelectorAll('#big-box div');
+
+        $boxes[0].innerHTML = 'X';
+        $boxes[1].innerHTML = 'X';
+        $boxes[2].innerHTML = 'X';
+
+        const result = findWinner(isWinner, $player, $boxes);
+        expect(result).toBe(true);
+    });
+
+    it("should return the value 'undefined' from the function changeColor when the 3 squares forming the line do not have the same value.", function() {
+        isWinner = false;
+        const $player = browser.window.document.getElementById('player');
+        const $boxes = browser.window.document.querySelectorAll('#big-box div');
+
+        $boxes[0].innerHTML = 'X';
+        $boxes[1].innerHTML = 'O';
+        $boxes[2].innerHTML = 'X';
+
+        const result = findWinner(isWinner, $player, $boxes);
+        expect(result).toBe(undefined);
     });
 });

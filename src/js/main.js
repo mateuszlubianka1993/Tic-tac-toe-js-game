@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     this.innerHTML = 'X';
                     $player.innerHTML = 'O Player Turn';
-                    isWinner = findWinner(isWinner);
+                    isWinner = findWinner(isWinner, $player, $boxes);
                     ticTac += 1;
                 } else {
 
                     this.innerHTML = 'O';
                     $player.innerHTML = 'X Player Turn';
-                    isWinner = findWinner(isWinner);
+                    isWinner = findWinner(isWinner, $player, $boxes);
                     ticTac += 1;
                 }
             }
