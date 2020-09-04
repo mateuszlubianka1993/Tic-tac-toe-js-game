@@ -26,6 +26,7 @@
         "@babel/core": "^7.10.1",
         "@babel/preset-env": "^7.10.1",
         "babel-loader": "^8.1.0",
+        "husky": "^4.2.5",
         "jasmine": "^3.6.1",
         "jasmine-console-reporter": "^3.1.0",
         "jsdom": "^16.4.0",
