@@ -19,6 +19,10 @@ class HomePage {
         await this.browser.close();
     }
 
+    title() {
+        return this.page.title();
+    }
+
 }
 
 module.exports = {

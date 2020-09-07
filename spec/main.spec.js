@@ -17,6 +17,6 @@ describe('Home Page ', () => {
     });
 
     it('should set correct title', async() => {
-        expect(true).toBe(true);
+        expect(await page.title()).toBe('Tic-tac-toe-js');
     });
 });
