@@ -9,12 +9,12 @@
         "start": "webpack-dev-server --watch"
     },
     "husky": {
-    "hooks": {
-      "pre-commit": "npm test",
-      "pre-push": "npm test",
-      "...": "..."
-    }
-  },
+        "hooks": {
+            "pre-commit": "npm test",
+            "pre-push": "npm test",
+            "...": "..."
+        }
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/mateuszlubianka1993/Tic-tac-toe-js-game.git"
