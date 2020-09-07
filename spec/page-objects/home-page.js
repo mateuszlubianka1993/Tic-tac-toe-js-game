@@ -8,8 +8,7 @@ class HomePage {
 
     async open() {
         this.browser = await puppeteer.launch({
-            headless: true,
-            slowMo: 5
+            headless: true
         });
         this.page = await this.browser.newPage();
         await this.page.goto(this.url);
@@ -23,6 +22,17 @@ class HomePage {
         return this.page.title();
     }
 
+    getHeaderContent() {
+        return this.page.$eval('h1', ($el) => $el.textContent);
+    }
+
+    getElemContent(elem) {
+        return this.page.$eval(elem, ($el) => $el.textContent);
+    }
+
+    clickElem(elem) {
+        this.page.$eval(elem, el => el.click());
+    }
 }
 
 module.exports = {
